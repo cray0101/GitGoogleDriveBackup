@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "git-drive-backup"
+version = "1.0.0"
+description = "Append-only incremental Git backups to Google Drive"
+requires-python = ">=3.10"
+dependencies = [
+    "google-api-python-client",
+    "google-auth",
+    "google-auth-httplib2",
+    "google-auth-oauthlib",
+]
+
+[project.scripts]
+git-drive-backup = "git_drive_backup.backup:main"
+
+[tool.setuptools]
+packages = ["git_drive_backup"]
